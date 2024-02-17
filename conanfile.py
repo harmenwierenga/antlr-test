@@ -8,5 +8,8 @@ class AntlrTestRecipe(ConanFile):
     def requirements(self):
         self.requires("antlr4-cppruntime/4.13.1")
 
+    def build_requirements(self):
+        self.tool_requires("cmake/3.28.1")
+
     def layout(self):
         cmake_layout(self)
