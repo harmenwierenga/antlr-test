@@ -10,6 +10,7 @@ class AntlrTestRecipe(ConanFile):
 
     def build_requirements(self):
         self.tool_requires("cmake/3.28.1")
+        self.test_requires("gtest/1.14.0")
 
     def layout(self):
         cmake_layout(self)
