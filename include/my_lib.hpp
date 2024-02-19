@@ -1,4 +1,3 @@
-namespace my_lib
-{
-    int f();
+namespace my_lib {
+int f();
 }

@@ -1,0 +1,12 @@
+---
+BasedOnStyle: Google
+---
+Language: Cpp
+# Make formatting deterministic:
+# auto& x over auto &x
+DerivePointerAlignment: false
+PointerAlignment: Left
+# const west over east const
+QualifierAlignment: Right
+
+AllowShortFunctionsOnASingleLine: Empty
