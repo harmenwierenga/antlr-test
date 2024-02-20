@@ -4,6 +4,9 @@ CMakeUserPresets.json
 # Build directory
 build/**
 
+# Generated files
+generated/**
+
 # Prerequisites
 *.d
 
