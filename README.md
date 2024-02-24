@@ -8,7 +8,7 @@ antlr4 -o generated -Werror -Dlanguage=Cpp -lib .\generated\grammars -package te
 # How to build
 Windows:
 
-- conan install . --build=missing --profile=vs2019_debug
+- conan install . --build=missing --profile=msvc_debug
 - build\generators\conanbuild.bat
 - cmake -S . -B build -G "Visual Studio 17 2022" -DCMAKE_TOOLCHAIN_FILE="build\generators\conan_toolchain.cmake" -DCMAKE_BUILD_TYPE=Debug
 - cmake --build build --config Debug
