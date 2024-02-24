@@ -5,7 +5,7 @@ CMakeUserPresets.json
 build/**
 
 # Generated files
-generated/**
+generated/grammars/**
 
 # Prerequisites
 *.d
