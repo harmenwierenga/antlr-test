@@ -10,6 +10,7 @@ Windows:
 
 - conan install . --build=missing --profile=msvc_debug
 - build\generators\conanbuild.bat
+- generate C++ parser using Antlr4 (see above)
 - cmake -S . -B build -G "Visual Studio 17 2022" -DCMAKE_TOOLCHAIN_FILE="build\generators\conan_toolchain.cmake" -DCMAKE_BUILD_TYPE=Debug
 - cmake --build build --config Debug
 - build\generators\deactivate_conanbuild.bat
