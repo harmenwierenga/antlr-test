@@ -2,8 +2,8 @@
 Play around with Antlr4
 
 # How to generate C++ grammar files
-antlr4 -o generated -Werror -Dlanguage=Cpp -package test .\grammars\TestLexer.g4
-antlr4 -o generated -Werror -Dlanguage=Cpp -lib .\generated\grammars -package test -no-listener -visitor .\grammars\TestParser.g4
+    antlr4 -o generated -Werror -Dlanguage=Cpp -package test .\grammars\TestLexer.g4
+    antlr4 -o generated -Werror -Dlanguage=Cpp -lib .\generated\grammars -package test -no-listener -visitor .\grammars\TestParser.g4
 
 # How to build
 Windows:
