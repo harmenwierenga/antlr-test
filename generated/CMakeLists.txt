@@ -16,5 +16,5 @@ set(header_files grammars/${lexer_name}.h
 find_package(antlr4-runtime REQUIRED)
 
 add_library(parser STATIC ${header_files} ${source_files})
-target_include_directories(parser PUBLIC ${CMAKE_SOURCE_DIR}/grammars)
+target_include_directories(parser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/grammars)
 target_link_libraries(parser PUBLIC antlr4_static)
