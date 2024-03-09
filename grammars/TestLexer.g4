@@ -6,5 +6,7 @@ fragment INTEGER : [0-9]+ ;
 
 PLUS : '+' ;
 MINUS : '-' ;
+TIMES : '*' ;
+DIVIDE : '/' ;
 OPEN_PAREN : '(' ;
 CLOSE_PAREN : ')' ;

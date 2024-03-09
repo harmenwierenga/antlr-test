@@ -17,3 +17,15 @@ TEST(antlr_tests, simple_parentheses) {
 TEST(antlr_tests, parentheses_precedence) {
   EXPECT_DOUBLE_EQ(my_lib::evaluate_expression("1 - ((6 - 4) - (3 + 2))"), 4.);
 }
+
+TEST(antlr_tests, multiplication) {
+  EXPECT_DOUBLE_EQ(my_lib::evaluate_expression("3.5 * 4"), 14.);
+}
+
+TEST(antlr_tests, division) {
+  EXPECT_DOUBLE_EQ(my_lib::evaluate_expression("13 / 4"), 3.25);
+}
+
+TEST(antlr_tests, multiplication_precedence) {
+  EXPECT_DOUBLE_EQ(my_lib::evaluate_expression("2 + 3 * 4"), 14.);
+}

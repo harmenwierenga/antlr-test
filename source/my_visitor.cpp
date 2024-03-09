@@ -1,5 +1,7 @@
 #include "my_visitor.hpp"
 
+#include <any>
+#include <functional>
 #include <string>
 
 namespace my_lib {
@@ -7,19 +9,22 @@ std::any My_Visitor::visitStart(test::TestParser::StartContext* ctx) {
   return visit(ctx->expression());
 }
 
+std::any My_Visitor::visitMultiplication(
+    test::TestParser::MultiplicationContext* ctx) {
+  return visitBinaryExpression(ctx, std::multiplies<double>{});
+}
+
+std::any My_Visitor::visitDivision(test::TestParser::DivisionContext* ctx) {
+  return visitBinaryExpression(ctx, std::divides<double>{});
+}
+
 std::any My_Visitor::visitAddition(test::TestParser::AdditionContext* ctx) {
-  auto const expressions = ctx->expression();
-  auto const lhs = visit(expressions.front());
-  auto const rhs = visit(expressions.back());
-  return std::any_cast<double>(lhs) + std::any_cast<double>(rhs);
+  return visitBinaryExpression(ctx, std::plus<double>{});
 }
 
 std::any My_Visitor::visitSubtraction(
     test::TestParser::SubtractionContext* ctx) {
-  auto const expressions = ctx->expression();
-  auto const lhs = visit(expressions.front());
-  auto const rhs = visit(expressions.back());
-  return std::any_cast<double>(lhs) - std::any_cast<double>(rhs);
+  return visitBinaryExpression(ctx, std::minus<double>{});
 }
 
 std::any My_Visitor::visitParenthesised(
